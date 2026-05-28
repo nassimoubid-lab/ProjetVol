@@ -22,7 +22,8 @@ Route::post('/confirmationpanier', [ControllerPanier::class, 'createPanier'])->n
 Route::post('/panier', [ControllerPanier::class, 'createPanier'])->name('panierconf');
 Route::post('/Panier', [ControllerPanier::class, 'showPanier'])->name('showpanier');
 
-
+Route::post('/panier/{id}/delete', [ControllerPanier::class, 'deletePanier'])->name('panier.delete');
+Route::get('/panier', [ControllerPanier::class, 'showPanier'])->name('panier.show');
 
 Route::get('/createvolform', [ControllerVol::class, 'createVolForm']);
 Route::get('/createvol', [ControllerVol::class, 'createVol']);

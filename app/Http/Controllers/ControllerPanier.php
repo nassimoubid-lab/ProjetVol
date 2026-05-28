@@ -45,5 +45,14 @@ class ControllerPanier extends Controller{
         $listpanier = Panier::all();
         return $listpanier;
     }
+
+
+    public function deletePanier($id)
+{
+    $panier = Panier::findOrFail($id);
+    $panier->delete();
+
+    return redirect()->route('panier.show')->with('success', 'Vol retiré du panier.');
+}
 }
 

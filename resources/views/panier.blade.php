@@ -229,7 +229,24 @@
                 </div>
             </div>
             <p class="panier-item-price">{{ $element->panierVolName->price * $element->quantite }} €</p>
+            <form action="{{ route('panier.delete', $element->id) }}" method="POST" style="margin:0">
+    @csrf
+    <button type="submit" style="
+        padding: 6px 12px;
+        background: transparent;
+        border: 1px solid #FECACA;
+        border-radius: 8px;
+        color: #DC2626;
+        font-family: 'Inter', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        cursor: pointer;
+    " onmouseover="this.style.background='#FEF2F2'" onmouseout="this.style.background='transparent'">
+        🗑 Supprimer
+    </button>
+</form>
         </div>
+
 
         @php $total += $element->panierVolName->price * $element->quantite; @endphp
 
