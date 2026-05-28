@@ -175,7 +175,6 @@
         </div>
     </a>
     <div class="nav-actions">
-        <a href="{{ url('/login') }}" class="btn-nav btn-nav-ghost">👤 Se connecter</a>
         <form action="{{ route('showpanier') }}" method="POST" style="margin:0">
             @csrf
             <button type="submit" class="btn-nav btn-nav-primary">🛒 Mon panier</button>
@@ -190,6 +189,7 @@
 <footer>
     <span class="footer-brand">RayNass Air Company</span>
     <span class="footer-copy">© {{ date('Y') }} — Tous droits réservés</span>
+    <a href="{{ url('/login') }}" style="font-size:11px; color:var(--gray-400); text-decoration:none; transition: color 0.15s;" onmouseover="this.style.color='var(--gray-600)'" onmouseout="this.style.color='var(--gray-400)'">Administration</a>
 </footer>
 
 </body>
